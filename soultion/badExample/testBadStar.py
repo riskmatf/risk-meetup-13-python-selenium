@@ -11,7 +11,6 @@ try:
     driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub', desired_capabilities=DesiredCapabilities.CHROME)
     wait = WebDriverWait(driver, 10)
     driver.get("https://github.com")
-    
     assert True
 
 
