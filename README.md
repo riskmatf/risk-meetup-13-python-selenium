@@ -15,3 +15,20 @@ Tokom predavanja biće korišćeni git i servis GitHub, programski jezik Python,
 Kako je ova grana programiranja u ekspanziji zbog rastućeg broja korisnika aplikacija i rapidnih 
 promena softvera, ovaj kurs može biti koristan pogotovo kada se uzme u obzir da nijedan kurs 
 na Matematičkom fakultetu ne pokriva ovu temu na odgovarajući način. 
+
+Za pokretanje koda neophodno je instalirati sledece 
+
+Selenium standalone server i Chrome webdriver sa sajta:
+```sh
+https://www.seleniumhq.org/download/
+```
+
+Pokretanje selenium servera 
+```sh
+java -jar selenium-server-standalone-3.141.59
+```
+
+Potrebne python biblioteke
+```
+pip install selenium
+```
