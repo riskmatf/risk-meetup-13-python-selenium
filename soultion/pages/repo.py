@@ -6,7 +6,8 @@ class RepositoryPage(BasePage):
 
     starLocator = (By.PARTIAL_LINK_TEXT, 'Star')
 
-    # click star
+    def click_on_star(self):
+        self.click_on_element(self.starLocator)
 
 
 

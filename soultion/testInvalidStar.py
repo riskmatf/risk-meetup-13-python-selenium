@@ -18,7 +18,14 @@ repoPage = RepositoryPage(driver)
 
 try:
     homePage.navigate_to_homepage()
-    assert True
+    homePage.search_for_user("riskmatf")
+    searchPage.navigate_to_user_results()
+    searchPage.select_first_user()
+    userPage.go_to_repository("risk-media")
+    repoPage.click_on_star()
+
+    assert loginPage.validate_login_page(), "Login page not displayed"
+
 except Exception as e:
     raise e
 

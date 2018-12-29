@@ -10,4 +10,17 @@ class UserPage(BasePage):
     selectorRepos = (By.CSS_SELECTOR, 'div.org-repos.repo-list li h3 a')
     repository = '//a[contains(text(), "{0}")]'
 
-    # get num x2 + goto repo
+    def get_number_of_repos_from_banner(self):
+        print("Getting num of repositories from baner")
+        self.wait_for_element_visibility(self.counterBanner)
+        return int(self.driver.find_element(*self.counterBanner).text)
+
+    def get_real_number_of_repos(self):
+        print("Getting real num of repositories")
+        list_of_repos = self.driver.find_elements(*self.selectorRepos)
+        return len(list_of_repos)
+
+    def go_to_repository(self, name):
+        print("Going to repository {0}".format(name))
+        repo = (By.XPATH, self.repository.format(name))
+        self.click_on_element(repo)

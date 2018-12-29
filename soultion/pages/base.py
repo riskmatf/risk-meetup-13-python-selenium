@@ -26,4 +26,7 @@ class BasePage(object):
     def wait_for_element_to_be_clickable(self, locator, waittime=30):
         WebDriverWait(self.driver, waittime).until(EC.element_to_be_clickable(locator))
 
-    # CLICK ELEMENT
+    def click_on_element(self, locator):
+        print("Clicking on element: {0}".format(locator))
+        self.wait_for_element_to_be_clickable(locator)
+        self.driver.find_element(*locator).click()

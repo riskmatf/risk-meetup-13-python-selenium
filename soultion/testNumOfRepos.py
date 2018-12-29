@@ -16,7 +16,15 @@ userPage = UserPage(driver)
 
 try:
     homePage.navigate_to_homepage()
-    assert True
+    homePage.navigate_to_login()
+    loginPage.login_into_page()
+    homePage.search_for_user("riskmatf")
+    searchPage.navigate_to_user_results()
+    searchPage.select_first_user()
+    repoBanner = userPage.get_number_of_repos_from_banner()
+    realRepo = userPage.get_real_number_of_repos()
+
+    assert realRepo == repoBanner, "Repo and real not the same"
 
 except Exception as e:
     raise e
