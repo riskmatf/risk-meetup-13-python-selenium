@@ -16,19 +16,66 @@ Kako je ova grana programiranja u ekspanziji zbog rastućeg broja korisnika apli
 promena softvera, ovaj kurs može biti koristan pogotovo kada se uzme u obzir da nijedan kurs 
 na Matematičkom fakultetu ne pokriva ovu temu na odgovarajući način. 
 
-Za pokretanje koda neophodno je instalirati sledece 
 
-Selenium standalone server i Chrome webdriver sa sajta:
+Kompletno predavanje možete videti na sledećem linku
+
+[![selenium](http://img.youtube.com/vi/bd8dU8UURxo/0.jpg)](http://www.youtube.com/watch?v=bd8dU8UURxo "selenium")
+
+
+---
+
+## Preduslovi za pokretanje
+
+Za pokretanje programa i praćenje radionice neophodno je instalirati sledeće stvari
+
+1. **Pip (python2.7)**
+
+Python je najčešće dolazi uz operativni sistem, a pip će nam biti potreban za instaliranje biblioteka
+za praćenje ove radionice. Sledeći linkovi mogu pomoći pri instalaciji.
+```sh
+https://www.python.org/download/releases/2.7/
+https://pip.pypa.io/en/stable/installing/
+```
+
+2. **Java**
+
+Ukoliko nemate javu instaliranu na svom sistemu, možete je instalirati putem ovih komandi na Ubunutu operativnom 
+sistemu.
+```sh
+$ sudo apt-get update
+$ sudo apt-get install default-jre
+$ sudo apt-get install default-jdk
+$ sudo add-apt-repository ppa:webupd8team/java
+$ sudo apt-get install oracle-java8-installer
+```
+3. **Selenium**
+
+Biblioteka koju ćemo koristiti za pisanje automatskih testova u pythonu.
+```
+pip install selenium
+```
+
+4. **Selenium standalone server i Chrome webdriver**
+
+Na ovom sajtu je potrebno skinuti selenium standalone server (.jar ) kao i chrome webdriver i sačuvati ih u istom
+direktorijumu. Obratiti pažnju da webdriver treba skinuti za operativni sistem koji koristite.
 ```sh
 https://www.seleniumhq.org/download/
 ```
 
-Pokretanje selenium servera 
-```sh
-java -jar selenium-server-standalone-3.141.59
+---
+
+## Pokretanje programa
+
+1. Ući u direktorijum gde je sačuvan selenium standalone server i webdriver i pokrenuti ga na portu 4444
+
+```
+$ java -jar selenium-server-standalone-3.141.59
 ```
 
-Potrebne python biblioteke
+2. Pokrenuti željeni test sa
+
 ```
-pip install selenium
+$ python testname.py
 ```
+
